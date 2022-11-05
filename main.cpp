@@ -17,14 +17,14 @@ int main()
     for (int i = 0; i < M; i++)
     {
         *(A + i) = rand() % 100;
-        cout << *(+A + i) << " ";
+        cout << *(A + i) << " ";
     }
     cout << endl;
     cout << "Array B: " << endl;
     for (int i = 0; i < N; i++)
     {
         *(B + i) = rand() % 100;
-        cout << *(+B + i) << " ";
+        cout << *(B + i) << " ";
     }
     cout << endl;
     cout << "Combining arrays together: " << endl;
