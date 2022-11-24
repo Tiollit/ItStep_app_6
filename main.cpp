@@ -27,12 +27,12 @@ int main()
     }
     cout << endl;   
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < M; i++)
     {
-        for (int j = 0; j < M; j++)
+        for (int j = 0; j < N; j++)
         {
             if (*(A + i) == *(B + j)) L += 1;
-            if (*(A + i) == *(A + j)) *(A + i) = -1;
+            if (*(A + i) == *(A + j)) *(A + i) = 101;
         }
         if (L == 0)
         {
@@ -46,7 +46,7 @@ int main()
     int* C = new int[T];
     for (int i = 0; i < M; i++)
     {
-        if (*(A + i) != -1)
+        if (*(A + i) != 101)
         {
         *(C + L) = *(A + i);
         cout << *(C + L) << " ";
