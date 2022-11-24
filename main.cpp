@@ -5,12 +5,11 @@ using namespace std;
 int main()
 {
     srand(time(0));
-    int M, N, L = 0, T = 0, *T = new int();
+    int M, N, L = 0, T = 0;
     cout << "Incert sizes of arays: M and N" << endl;
     cin >> M >> N;
     int* A = new int[M];
-    int* B = new int[N];
-    int* C = new int[M + N];    
+    int* B = new int[N];       
 
     cout << "Generating arrays:" << endl;
     cout << "Array A: " << endl;
@@ -33,28 +32,27 @@ int main()
         for (int j = 0; j < M; j++)
         {
             if (*(A + i) == *(B + j)) L += 1;
+            if (*(A + i) == *(A + j)) *(A + i) = -1;
         }
         if (L == 0)
         {
             T = T + 1;
-            *(C + i) = *(A + i);
         }
         else L = 0;
     }
-
-    L = T;
-    for (int i = 0; i < T; i++)
+    cout << T << endl;
+    L = 0;
+    cout << "New Array: " << endl;
+    int* C = new int[T];
+    for (int i = 0; i < M; i++)
     {
-        for (int j = 0; j < T; j++)
+        if (*(A + i) != -1)
         {
-            if (*(C + i) == *(C + j)) L = L - 1;
-        }        
+        *(C + L) = *(A + i);
+        cout << *(C + L) << " ";
+        L += 1;
+        }
     }
-
-    int* D = new int[L];
-    for (int i = 0; i < L; i++)
-    {
-
-    }
+    
     return 0;
 }
